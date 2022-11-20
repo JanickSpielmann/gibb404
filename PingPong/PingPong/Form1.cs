@@ -27,16 +27,32 @@ namespace PingPong
 
         private void tmrSpiel_Tick(object sender, EventArgs e)
         {
-            if(picBall.Location.X >= 600 || picBall.Location.X <= 0)
+            if(picBall.Location.X >= 600-picBall.Width || picBall.Location.X <= 0)
             {
                 xDirection = xDirection * -1;
             }
-            else if (picBall.Location.Y >= 300|| picBall.Location.Y <= 0)
+            else if (picBall.Location.Y >= 300-picBall.Height|| picBall.Location.Y <= 0)
             {
                 yDirection = yDirection * -1;
             }
             picBall.Location = new Point(picBall.Location.X + xDirection, picBall.Location.Y + yDirection);
        
+        }
+
+        private void txtPunkte_TextChanged(object sender, EventArgs e)
+        {
+            int score = 0;
+            if()
+        }
+
+        private void picSchlägerRechts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vsbSchlägerRechts_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }

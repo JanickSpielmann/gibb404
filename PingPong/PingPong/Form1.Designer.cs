@@ -34,9 +34,14 @@
             this.picBall = new System.Windows.Forms.PictureBox();
             this.tmrSpiel = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vsbSchlägerRechts = new System.Windows.Forms.VScrollBar();
+            this.picSchlägerRechts = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPunkte = new System.Windows.Forms.TextBox();
             this.pnlSpiel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
@@ -53,6 +58,7 @@
             // 
             this.pnlSpiel.BackColor = System.Drawing.Color.SeaGreen;
             this.pnlSpiel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSpiel.Controls.Add(this.picSchlägerRechts);
             this.pnlSpiel.Controls.Add(this.picBall);
             this.pnlSpiel.Location = new System.Drawing.Point(40, 40);
             this.pnlSpiel.Name = "pnlSpiel";
@@ -73,11 +79,50 @@
             this.tmrSpiel.Interval = 60;
             this.tmrSpiel.Tick += new System.EventHandler(this.tmrSpiel_Tick);
             // 
+            // vsbSchlägerRechts
+            // 
+            this.vsbSchlägerRechts.Location = new System.Drawing.Point(643, 40);
+            this.vsbSchlägerRechts.Name = "vsbSchlägerRechts";
+            this.vsbSchlägerRechts.Size = new System.Drawing.Size(17, 300);
+            this.vsbSchlägerRechts.TabIndex = 3;
+            this.vsbSchlägerRechts.Value = 50;
+            this.vsbSchlägerRechts.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vsbSchlägerRechts_Scroll);
+            // 
+            // picSchlägerRechts
+            // 
+            this.picSchlägerRechts.BackColor = System.Drawing.Color.Black;
+            this.picSchlägerRechts.Location = new System.Drawing.Point(591, 141);
+            this.picSchlägerRechts.Name = "picSchlägerRechts";
+            this.picSchlägerRechts.Size = new System.Drawing.Size(4, 40);
+            this.picSchlägerRechts.TabIndex = 4;
+            this.picSchlägerRechts.TabStop = false;
+            this.picSchlägerRechts.Click += new System.EventHandler(this.picSchlägerRechts_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 378);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Punkte:";
+            // 
+            // txtPunkte
+            // 
+            this.txtPunkte.Location = new System.Drawing.Point(90, 375);
+            this.txtPunkte.Name = "txtPunkte";
+            this.txtPunkte.Size = new System.Drawing.Size(100, 20);
+            this.txtPunkte.TabIndex = 5;
+            this.txtPunkte.TextChanged += new System.EventHandler(this.txtPunkte_TextChanged);
+            // 
             // frmPingPong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPunkte);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.vsbSchlägerRechts);
             this.Controls.Add(this.pnlSpiel);
             this.Controls.Add(this.btnStart);
             this.Name = "frmPingPong";
@@ -85,7 +130,9 @@
             this.pnlSpiel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -96,6 +143,10 @@
         private System.Windows.Forms.Timer tmrSpiel;
         private System.Windows.Forms.PictureBox picBall;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.PictureBox picSchlägerRechts;
+        private System.Windows.Forms.VScrollBar vsbSchlägerRechts;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPunkte;
     }
 }
 
