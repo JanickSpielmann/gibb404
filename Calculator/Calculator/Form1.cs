@@ -64,10 +64,15 @@ namespace Calculator
                 ergebnis = zahl2;
                 lblOperator.Text = "<";
             }
+            else if(zahl1> zahl2) {
+               
+                    ergebnis = zahl1;
+                    lblOperator.Text = ">";
+                }
             else
             {
                 ergebnis = zahl1;
-                lblOperator.Text = ">";
+                lblOperator.Text = "=";
             }
             lblErgebnis.Text = Convert.ToString(ergebnis);
         }
