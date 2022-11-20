@@ -42,7 +42,7 @@ namespace PingPong
         private void txtPunkte_TextChanged(object sender, EventArgs e)
         {
             int score = 0;
-            if()
+            
         }
 
         private void picSchlägerRechts_Click(object sender, EventArgs e)
