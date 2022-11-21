@@ -12,12 +12,13 @@ namespace PingPong
 {
     public partial class frmPingPong : Form
     {
-        int xDirection = 5;
-        int yDirection = 2;
+        int xRichtung = 5;
+        int yRichtung = 2;
         public frmPingPong()
         {
             InitializeComponent();
-            picBall.Location = new Point(75, 25);
+            ovsBall.Location = new Point(75, 25);
+            picSchlägerRechts.Location = new Point(590, 25);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -27,16 +28,17 @@ namespace PingPong
 
         private void tmrSpiel_Tick(object sender, EventArgs e)
         {
-            if(picBall.Location.X >= 600-picBall.Width || picBall.Location.X <= 0)
+            if(ovsBall.Location.X >= 600- ovsBall.Width || ovsBall.Location.X <= 0)
             {
-                xDirection = xDirection * -1;
+                xRichtung = xRichtung * -1;
             }
-            else if (picBall.Location.Y >= 300-picBall.Height|| picBall.Location.Y <= 0)
+            else if (ovsBall.Location.Y >= 300- ovsBall.Height || ovsBall.Location.Y <= 0)
             {
-                yDirection = yDirection * -1;
+                yRichtung = yRichtung * -1;
             }
-            picBall.Location = new Point(picBall.Location.X + xDirection, picBall.Location.Y + yDirection);
-       
+            ovsBall.Location = new Point(ovsBall.Location.X + xRichtung, ovsBall.Location.Y + yRichtung);
+            picSchlägerRechts.Location = new Point(picSchlägerRechts.Location.X, vsbSchlägerRechts.Location.Y);
+
         }
 
         private void txtPunkte_TextChanged(object sender, EventArgs e)
@@ -52,7 +54,8 @@ namespace PingPong
 
         private void vsbSchlägerRechts_Scroll(object sender, ScrollEventArgs e)
         {
-
+            
         }
+      
     }
 }
