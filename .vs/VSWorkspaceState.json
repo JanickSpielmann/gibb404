@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PingPong",
+    "\\PingPong\\PingPong"
   ],
-  "SelectedNode": "\\Calculator.sln",
+  "SelectedNode": "\\PingPong\\PingPong\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
