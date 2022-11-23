@@ -32,13 +32,15 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.pnlSpiel = new System.Windows.Forms.Panel();
             this.picSchlägerRechts = new System.Windows.Forms.PictureBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.ovsBall = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.tmrSpiel = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vsbSchlägerRechts = new System.Windows.Forms.VScrollBar();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPunkte = new System.Windows.Forms.TextBox();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.ovsBall = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.ovsStatus = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.pnlSpiel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -68,43 +70,11 @@
             // picSchlägerRechts
             // 
             this.picSchlägerRechts.BackColor = System.Drawing.Color.Black;
-            this.picSchlägerRechts.Location = new System.Drawing.Point(590, 141);
+            this.picSchlägerRechts.Location = new System.Drawing.Point(590, 149);
             this.picSchlägerRechts.Name = "picSchlägerRechts";
             this.picSchlägerRechts.Size = new System.Drawing.Size(4, 40);
             this.picSchlägerRechts.TabIndex = 4;
             this.picSchlägerRechts.TabStop = false;
-            this.picSchlägerRechts.Click += new System.EventHandler(this.picSchlägerRechts_Click);
-            // 
-            // tmrSpiel
-            // 
-            this.tmrSpiel.Interval = 60;
-            this.tmrSpiel.Tick += new System.EventHandler(this.tmrSpiel_Tick);
-            // 
-            // vsbSchlägerRechts
-            // 
-            this.vsbSchlägerRechts.Location = new System.Drawing.Point(643, 40);
-            this.vsbSchlägerRechts.Name = "vsbSchlägerRechts";
-            this.vsbSchlägerRechts.Size = new System.Drawing.Size(17, 300);
-            this.vsbSchlägerRechts.TabIndex = 3;
-            this.vsbSchlägerRechts.Value = 50;
-            this.vsbSchlägerRechts.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vsbSchlägerRechts_Scroll);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 378);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Punkte:";
-            // 
-            // txtPunkte
-            // 
-            this.txtPunkte.Location = new System.Drawing.Point(90, 375);
-            this.txtPunkte.Name = "txtPunkte";
-            this.txtPunkte.Size = new System.Drawing.Size(100, 20);
-            this.txtPunkte.TabIndex = 5;
-            this.txtPunkte.TextChanged += new System.EventHandler(this.txtPunkte_TextChanged);
             // 
             // shapeContainer1
             // 
@@ -122,9 +92,59 @@
             this.ovsBall.BackColor = System.Drawing.Color.Yellow;
             this.ovsBall.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovsBall.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.ovsBall.Location = new System.Drawing.Point(149, 98);
+            this.ovsBall.Location = new System.Drawing.Point(0, 0);
             this.ovsBall.Name = "ovsBall";
-            this.ovsBall.Size = new System.Drawing.Size(25, 25);
+            this.ovsBall.Size = new System.Drawing.Size(24, 25);
+            // 
+            // tmrSpiel
+            // 
+            this.tmrSpiel.Interval = 30;
+            this.tmrSpiel.Tick += new System.EventHandler(this.tmrSpiel_Tick);
+            // 
+            // vsbSchlägerRechts
+            // 
+            this.vsbSchlägerRechts.Location = new System.Drawing.Point(643, 40);
+            this.vsbSchlägerRechts.Name = "vsbSchlägerRechts";
+            this.vsbSchlägerRechts.Size = new System.Drawing.Size(17, 300);
+            this.vsbSchlägerRechts.TabIndex = 3;
+            this.vsbSchlägerRechts.Value = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 378);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Punkte:";
+            // 
+            // txtPunkte
+            // 
+            this.txtPunkte.Location = new System.Drawing.Point(90, 375);
+            this.txtPunkte.Name = "txtPunkte";
+            this.txtPunkte.Size = new System.Drawing.Size(100, 20);
+            this.txtPunkte.TabIndex = 5;
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.ovsStatus});
+            this.shapeContainer2.Size = new System.Drawing.Size(800, 450);
+            this.shapeContainer2.TabIndex = 6;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // ovsStatus
+            // 
+            this.ovsStatus.BackColor = System.Drawing.Color.Red;
+            this.ovsStatus.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovsStatus.FillColor = System.Drawing.Color.Red;
+            this.ovsStatus.Location = new System.Drawing.Point(200, 380);
+            this.ovsStatus.Name = "ovsStatus";
+            this.ovsStatus.Size = new System.Drawing.Size(10, 10);
+            this.ovsStatus.Click += new System.EventHandler(this.ovsStatus_Click);
             // 
             // frmPingPong
             // 
@@ -136,6 +156,7 @@
             this.Controls.Add(this.vsbSchlägerRechts);
             this.Controls.Add(this.pnlSpiel);
             this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.shapeContainer2);
             this.Name = "frmPingPong";
             this.Text = "Ping-Pong Spiel";
             this.pnlSpiel.ResumeLayout(false);
@@ -158,6 +179,8 @@
         private System.Windows.Forms.TextBox txtPunkte;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovsBall;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovsStatus;
     }
 }
 
