@@ -52,7 +52,7 @@ namespace PingPong
 
                 tmrSpiel.Stop();
                 new frmGameOver(score).Show();
-                this.Close();
+                //this.Close(); maby needed later
 
                 ovsStatus.BackColor = Color.Red;
             }
