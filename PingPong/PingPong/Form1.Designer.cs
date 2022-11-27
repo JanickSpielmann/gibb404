@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.btnStart = new System.Windows.Forms.Button();
             this.pnlSpiel = new System.Windows.Forms.Panel();
+            this.picSchlägerRechts = new System.Windows.Forms.PictureBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.ovsBall = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.tmrSpiel = new System.Windows.Forms.Timer(this.components);
             this.vsbSchlägerRechts = new System.Windows.Forms.VScrollBar();
@@ -44,12 +46,14 @@
             this.btnRechts = new System.Windows.Forms.Button();
             this.btnLinks = new System.Windows.Forms.Button();
             this.btnHoch = new System.Windows.Forms.Button();
-            this.picSchlägerRechts = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.grpSteuerung = new System.Windows.Forms.GroupBox();
+            this.rdbBall = new System.Windows.Forms.RadioButton();
+            this.rdbSchläger = new System.Windows.Forms.RadioButton();
             this.pnlSpiel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.grpSteuerung.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
@@ -74,14 +78,34 @@
             this.pnlSpiel.Size = new System.Drawing.Size(600, 300);
             this.pnlSpiel.TabIndex = 2;
             // 
+            // picSchlägerRechts
+            // 
+            this.picSchlägerRechts.BackColor = System.Drawing.Color.Black;
+            this.picSchlägerRechts.Location = new System.Drawing.Point(590, 149);
+            this.picSchlägerRechts.Name = "picSchlägerRechts";
+            this.picSchlägerRechts.Size = new System.Drawing.Size(4, 40);
+            this.picSchlägerRechts.TabIndex = 4;
+            this.picSchlägerRechts.TabStop = false;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.ovsBall});
+            this.shapeContainer1.Size = new System.Drawing.Size(598, 298);
+            this.shapeContainer1.TabIndex = 5;
+            this.shapeContainer1.TabStop = false;
+            // 
             // ovsBall
             // 
             this.ovsBall.BackColor = System.Drawing.Color.Yellow;
             this.ovsBall.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovsBall.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.ovsBall.Location = new System.Drawing.Point(0, 0);
+            this.ovsBall.Location = new System.Drawing.Point(553, 158);
             this.ovsBall.Name = "ovsBall";
-            this.ovsBall.Size = new System.Drawing.Size(25, 25);
+            this.ovsBall.Size = new System.Drawing.Size(25, 26);
             // 
             // tmrSpiel
             // 
@@ -95,6 +119,7 @@
             this.vsbSchlägerRechts.Size = new System.Drawing.Size(17, 300);
             this.vsbSchlägerRechts.TabIndex = 3;
             this.vsbSchlägerRechts.Value = 50;
+            this.vsbSchlägerRechts.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vsbSchlägerRechts_Scroll);
             // 
             // label1
             // 
@@ -107,7 +132,7 @@
             // 
             // txtPunkte
             // 
-            this.txtPunkte.Location = new System.Drawing.Point(100, 350);
+            this.txtPunkte.Location = new System.Drawing.Point(90, 350);
             this.txtPunkte.Name = "txtPunkte";
             this.txtPunkte.Size = new System.Drawing.Size(50, 20);
             this.txtPunkte.TabIndex = 5;
@@ -146,13 +171,12 @@
             // 
             this.label2.BackColor = System.Drawing.Color.LightBlue;
             this.label2.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(120, 380);
+            this.label2.Location = new System.Drawing.Point(150, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 100);
             this.label2.TabIndex = 12;
             this.label2.Text = "Tastatursteuerung\r\nTaste\r\nH    horizontale Flugrichtung umkehren\r\nV    vertikale " +
     "Flugrichtung umkehren\r\nP    Spiel pausieren\r\nS    Spiel weiterlaufen lassen";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnRunter
             // 
@@ -163,6 +187,7 @@
             this.btnRunter.Size = new System.Drawing.Size(40, 40);
             this.btnRunter.TabIndex = 11;
             this.btnRunter.UseVisualStyleBackColor = false;
+            this.btnRunter.Click += new System.EventHandler(this.btnRunter_Click);
             // 
             // btnRechts
             // 
@@ -173,6 +198,7 @@
             this.btnRechts.Size = new System.Drawing.Size(40, 40);
             this.btnRechts.TabIndex = 10;
             this.btnRechts.UseVisualStyleBackColor = false;
+            this.btnRechts.Click += new System.EventHandler(this.btnRechts_Click);
             // 
             // btnLinks
             // 
@@ -183,6 +209,7 @@
             this.btnLinks.Size = new System.Drawing.Size(40, 40);
             this.btnLinks.TabIndex = 9;
             this.btnLinks.UseVisualStyleBackColor = false;
+            this.btnLinks.Click += new System.EventHandler(this.btnLinks_Click);
             // 
             // btnHoch
             // 
@@ -193,32 +220,47 @@
             this.btnHoch.Size = new System.Drawing.Size(40, 40);
             this.btnHoch.TabIndex = 7;
             this.btnHoch.UseVisualStyleBackColor = false;
+            this.btnHoch.Click += new System.EventHandler(this.btnHoch_Click);
             // 
-            // picSchlägerRechts
+            // grpSteuerung
             // 
-            this.picSchlägerRechts.BackColor = System.Drawing.Color.Black;
-            this.picSchlägerRechts.Location = new System.Drawing.Point(590, 149);
-            this.picSchlägerRechts.Name = "picSchlägerRechts";
-            this.picSchlägerRechts.Size = new System.Drawing.Size(4, 40);
-            this.picSchlägerRechts.TabIndex = 4;
-            this.picSchlägerRechts.TabStop = false;
+            this.grpSteuerung.Controls.Add(this.rdbSchläger);
+            this.grpSteuerung.Controls.Add(this.rdbBall);
+            this.grpSteuerung.Location = new System.Drawing.Point(643, 380);
+            this.grpSteuerung.Name = "grpSteuerung";
+            this.grpSteuerung.Size = new System.Drawing.Size(137, 100);
+            this.grpSteuerung.TabIndex = 13;
+            this.grpSteuerung.TabStop = false;
+            this.grpSteuerung.Text = "Wahl der Steuerung";
             // 
-            // shapeContainer1
+            // rdbBall
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.ovsBall});
-            this.shapeContainer1.Size = new System.Drawing.Size(598, 298);
-            this.shapeContainer1.TabIndex = 5;
-            this.shapeContainer1.TabStop = false;
+            this.rdbBall.AutoSize = true;
+            this.rdbBall.Location = new System.Drawing.Point(6, 21);
+            this.rdbBall.Name = "rdbBall";
+            this.rdbBall.Size = new System.Drawing.Size(89, 17);
+            this.rdbBall.TabIndex = 0;
+            this.rdbBall.TabStop = true;
+            this.rdbBall.Text = "Ballsteuerung";
+            this.rdbBall.UseVisualStyleBackColor = true;
+            // 
+            // rdbSchläger
+            // 
+            this.rdbSchläger.AutoSize = true;
+            this.rdbSchläger.Location = new System.Drawing.Point(6, 44);
+            this.rdbSchläger.Name = "rdbSchläger";
+            this.rdbSchläger.Size = new System.Drawing.Size(114, 17);
+            this.rdbSchläger.TabIndex = 1;
+            this.rdbSchläger.TabStop = true;
+            this.rdbSchläger.Text = "Schlägersteuerung";
+            this.rdbSchläger.UseVisualStyleBackColor = true;
             // 
             // frmPingPong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.grpSteuerung);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRunter);
             this.Controls.Add(this.btnRechts);
@@ -237,6 +279,8 @@
             this.pnlSpiel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSchlägerRechts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.grpSteuerung.ResumeLayout(false);
+            this.grpSteuerung.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +306,9 @@
         private System.Windows.Forms.Label label2;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovsBall;
+        private System.Windows.Forms.GroupBox grpSteuerung;
+        private System.Windows.Forms.RadioButton rdbSchläger;
+        private System.Windows.Forms.RadioButton rdbBall;
     }
 }
 
