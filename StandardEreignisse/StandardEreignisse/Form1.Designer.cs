@@ -28,13 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtAusgabe = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtAusgabe
+            // 
+            this.txtAusgabe.Enabled = false;
+            this.txtAusgabe.Location = new System.Drawing.Point(40, 40);
+            this.txtAusgabe.Multiline = true;
+            this.txtAusgabe.Name = "txtAusgabe";
+            this.txtAusgabe.Size = new System.Drawing.Size(600, 1000);
+            this.txtAusgabe.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 1161);
+            this.Controls.Add(this.txtAusgabe);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtAusgabe;
     }
 }
 
