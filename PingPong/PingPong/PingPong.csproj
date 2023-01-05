@@ -104,5 +104,8 @@
   <ItemGroup>
     <None Include="Resources\glyphicons-arrows-194-white-feathered-downwards-arrow%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Savefile.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

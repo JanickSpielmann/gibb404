@@ -16,7 +16,9 @@ namespace PingPong
         int xRichtung = 5;
         int yRichtung = 2;
         int score = 0;
-        
+        public frmGameOver fGO = new frmGameOver(0);
+        List<Button> lstRichtungsButton = new List<Button>();
+
         public frmPingPong()
         {
             InitializeComponent();
@@ -25,11 +27,9 @@ namespace PingPong
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-           
-            ovsBall.Location = new Point(75, 25);
+
+            ovsBall.Location = new Point(300, 25);
             picSchlägerRechts.Location = new Point(580, 50);
-            score = 0;
-            
             score = 0;
             tmrSpiel.Start();
         }
@@ -49,16 +49,16 @@ namespace PingPong
             }
             if (ovsBall.Location.X >= pnlSpiel.Width - ovsBall.Width)
             {
-
                 tmrSpiel.Stop();
-                new frmGameOver(score).Show();
-                //this.Close(); maby needed later
-
+                fGO.SetScore(score);
+                fGO.ClearName();
+                fGO.Show();
+                
                 ovsStatus.BackColor = Color.Red;
             }
             else if (ovsBall.Location.X <= 0)
             {
-                xRichtung = - xRichtung;
+                xRichtung = -xRichtung;
             }
 
             else if (ovsBall.Location.Y >= pnlSpiel.Height - ovsBall.Height || ovsBall.Location.Y <= 0)
@@ -107,9 +107,9 @@ namespace PingPong
                 case Keys.H:
                     xRichtung = -xRichtung;
                     break;
-                case Keys.V: 
+                case Keys.V:
                     yRichtung = -yRichtung;
-                    break ;
+                    break;
                 case Keys.P:
                     tmrSpiel.Stop();
                     break;
@@ -142,8 +142,11 @@ namespace PingPong
             ProcessDialogKey(Keys.Down);
         }
 
+        private void rdbBall_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
 
 

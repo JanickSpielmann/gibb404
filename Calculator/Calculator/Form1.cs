@@ -17,64 +17,39 @@ namespace Calculator
             InitializeComponent();
         }
 
+        Rechenoperationen rechnen = new Rechenoperationen();
+
         private void btnAddition_Click(object sender, EventArgs e)
         {
-            double zahl1 = Convert.ToDouble(txtOperand1.Text);
+
+            lblErgebnis.Text = Convert.ToString(rechnen.Addieren(Convert.ToDouble(txtOperand1.Text), Convert.ToDouble(txtOperand2.Text)));
+            lblOperator.Text = "+";
+
+            /*double zahl1 = Convert.ToDouble(txtOperand1.Text);
             double zahl2 = Convert.ToDouble(txtOperand2.Text);
             double ergebnis = zahl1 + zahl2;
             lblErgebnis.Text = Convert.ToString(ergebnis);
-            lblOperator.Text = "+";
+            lblOperator.Text = "+"; */
         }
-
         private void btnSubtraktion_Click(object sender, EventArgs e)
         {
-            double zahl1 = Convert.ToDouble(txtOperand1.Text);
-            double zahl2 = Convert.ToDouble(txtOperand2.Text);
-            double ergebnis = zahl1 - zahl2;
-            lblErgebnis.Text = Convert.ToString(ergebnis);
+            lblErgebnis.Text = Convert.ToString(rechnen.Subtrahieren(Convert.ToDouble(txtOperand1.Text), Convert.ToDouble(txtOperand2.Text)));
             lblOperator.Text = "-";
         }
-
         private void btnMittelwert_Click(object sender, EventArgs e)
         {
-            double zahl1 = Convert.ToDouble(txtOperand1.Text);
-            double zahl2 = Convert.ToDouble(txtOperand2.Text);
-            double ergebnis = (zahl1 + zahl2) /2;
-            lblErgebnis.Text = Convert.ToString(ergebnis);
+            lblErgebnis.Text = Convert.ToString(rechnen.Potenz(Convert.ToDouble(txtOperand1.Text), Convert.ToDouble(txtOperand2.Text)));
             lblOperator.Text = "~";
         }
-
         private void btnPotenz_Click(object sender, EventArgs e)
         {
-            double zahl1 = Convert.ToDouble(txtOperand1.Text);
-            double zahl2 = Convert.ToDouble(txtOperand2.Text);
-            double ergebnis = Math.Pow(zahl1, zahl2);
-            lblErgebnis.Text = Convert.ToString(ergebnis);
+            lblErgebnis.Text = Convert.ToString(rechnen.Potenz(Convert.ToDouble(txtOperand1.Text), Convert.ToDouble(txtOperand2.Text)));
             lblOperator.Text = "^^";
         }
-
         private void btnMaximum_Click(object sender, EventArgs e)
         {
-            double zahl1 = Convert.ToDouble(txtOperand1.Text);
-            double zahl2 = Convert.ToDouble(txtOperand2.Text);
-            double ergebnis = 0;
-            
-            if (zahl1 < zahl2)
-            {
-                ergebnis = zahl2;
-                lblOperator.Text = "<";
-            }
-            else if(zahl1> zahl2) {
-               
-                    ergebnis = zahl1;
-                    lblOperator.Text = ">";
-                }
-            else
-            {
-                ergebnis = zahl1;
-                lblOperator.Text = "=";
-            }
-            lblErgebnis.Text = Convert.ToString(ergebnis);
+            lblErgebnis.Text = Convert.ToString(rechnen.Maximum(Convert.ToDouble(txtOperand1.Text), Convert.ToDouble(txtOperand2.Text)));
+            lblOperator.Text = "";
         }
     }
 }

@@ -11,12 +11,15 @@ using Microsoft.Win32;
 
 namespace StandardEreignisse
 {
-    public partial class Form1 : Form
+    
+    public partial class frmWriter : Form
     {
-        public Form1()
+        
+        public frmWriter()
         {
             InitializeComponent();
         }
+        
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -88,6 +91,22 @@ namespace StandardEreignisse
                     txtAusgabe.Text += "mittlere Maustaste hoch" + Environment.NewLine;
                     break;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAusgabe_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInformation_Click(object sender, EventArgs e)
+        {
+        frmInformationen info = new frmInformationen();
+        info.Show();
         }
     }
 }
