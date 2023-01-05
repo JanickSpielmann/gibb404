@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Calculator",
     "\\Calculator\\Calculator",
-    "\\PingPong",
     "\\PingPong\\PingPong"
   ],
-  "SelectedNode": "\\PingPong\\PingPong\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
