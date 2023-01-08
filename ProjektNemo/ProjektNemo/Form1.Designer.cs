@@ -35,7 +35,7 @@
             this.btnNeuStart = new System.Windows.Forms.Button();
             this.min = new System.Windows.Forms.Label();
             this.max = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSpielfeld = new System.Windows.Forms.Panel();
             this.Geschwindikeit = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -105,12 +105,12 @@
             this.max.Text = "max";
             this.max.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // panel1
+            // pnlSpielfeld
             // 
-            this.panel1.Location = new System.Drawing.Point(10, 70);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 500);
-            this.panel1.TabIndex = 8;
+            this.pnlSpielfeld.Location = new System.Drawing.Point(10, 70);
+            this.pnlSpielfeld.Name = "pnlSpielfeld";
+            this.pnlSpielfeld.Size = new System.Drawing.Size(550, 500);
+            this.pnlSpielfeld.TabIndex = 8;
             // 
             // Geschwindikeit
             // 
@@ -159,6 +159,10 @@
             this.label6.Text = "0";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tmrSpielablauf
+            // 
+            this.tmrSpielablauf.Tick += new System.EventHandler(this.tmrSpielablauf_Tick);
+            // 
             // frmFindeNemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -169,7 +173,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Geschwindikeit);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSpielfeld);
             this.Controls.Add(this.max);
             this.Controls.Add(this.min);
             this.Controls.Add(this.btnNeuStart);
@@ -191,7 +195,7 @@
         private System.Windows.Forms.Button btnNeuStart;
         private System.Windows.Forms.Label min;
         private System.Windows.Forms.Label max;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSpielfeld;
         private System.Windows.Forms.Label Geschwindikeit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;

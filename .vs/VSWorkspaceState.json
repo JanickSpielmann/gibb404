@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Calculator",
     "\\Calculator\\Calculator",
-    "\\PingPong\\PingPong"
+    "\\Calculator\\Calculator\\Properties",
+    "\\PingPong",
+    "\\PingPong\\PingPong",
+    "\\PingPong\\PingPong\\Resources",
+    "\\ProjektNemo"
   ],
+  "SelectedNode": "\\ProjektNemo\\ProjektNemo.sln",
   "PreviewInSolutionExplorer": false
 }
